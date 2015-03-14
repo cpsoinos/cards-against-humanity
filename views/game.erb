@@ -1,3 +1,4 @@
+
 <form id ="player_number" action ="/game" method="get">
   <label for ="count">How many players?</label>
   <input type="text" name="count" id="count">
@@ -5,12 +6,3 @@
 </form>
 
 <form id ="player_name" action="/name" method="post"></form>
-
-<% game.number_of_players %>
-<p><%= "Number of players: #{game.players.length}" %></p>
-<%= "Players: " %>
-<ul>
-  <% game.players.each do |player| %>
-    <li><%= player.name %></li>
-  <% end %>
-</ul>

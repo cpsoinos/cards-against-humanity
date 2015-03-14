@@ -22,6 +22,10 @@ get '/game' do
   erb :game, locals: { game: game }
 end
 
+get '/card' do
+  erb :card, locals: { game: game}
+end
+
 post '/signin' do
   session[:user] = params[:user]
   redirect '/game'
@@ -32,5 +36,5 @@ post '/name' do
     game.players << Player.new(user,game.white_deck)
   end
 
-  redirect '/game'
+  redirect '/card'
 end

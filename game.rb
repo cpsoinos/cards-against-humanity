@@ -18,7 +18,6 @@ class Game
     judge = players.sample
     judge.make_judge
     judge
-    # ERB: puts "#{judge.name} is judging this round."
   end
 
   # judge picks a black card
