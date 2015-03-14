@@ -11,14 +11,7 @@ class Game
   end
 
   def number_of_players
-    # ERB: print "How many people are playing? "
-    player_count = 4
-    player_count.times do |i|
-      # ERB: print "Enter player name: "
-      # name = gets.chomp
-      # players << Player.new(name, white_deck)
-      players << Player.new("Player #{i}", white_deck)
-    end
+    player_count = @players.length
   end
 
   def choose_judge

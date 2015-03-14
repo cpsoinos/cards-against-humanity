@@ -13,19 +13,25 @@ end
 
 use Rack::Session::Cookie
 
+game = Game.new
+
 get '/' do
   erb :index
 end
 
 get '/game' do
-  session[:game] ||= Game.new
-  binding.pry
-  session[:game].players << Player.new(session[:user], session[:game].white_deck)
-  erb :game, locals: { game: session[:game] }
+  erb :game, locals: { game: game }
 end
 
 post '/signin' do
   session[:user] = params[:user]
   redirect '/game'
+end
 
+post '/name' do
+  params.each do |key, user|
+    game.players << Player.new(user,game.white_deck)
+  end
+
+  redirect '/game'
 end

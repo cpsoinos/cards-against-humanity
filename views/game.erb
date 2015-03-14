@@ -1,3 +1,13 @@
+<% binding.pry %>
+
+<form id ="player_number" action ="/game" method="get">
+  <label for ="count">How many players?</label>
+  <input type="text" name="count" id="count">
+  <input type="submit">
+</form>
+
+<form id ="player_name" action="/name" method="post"></form>
+
 <% game.number_of_players %>
 <p><%= "Number of players: #{game.players.length}" %></p>
 <%= "Players: " %>
@@ -6,26 +16,3 @@
     <li><%= player.name %></li>
   <% end %>
 </ul>
-
-<p><%= "#{game.choose_judge.name} is judging this round." %></p>
-
-
-
-<div class = "black_card">
-  <p>Black card: <%= game.generate_black_card.text %></p>
-  <% #display black card %>
-</div>
-
-<div class = "white_cards">
-  <ul>
-    <% game.players.each do |player| %>
-      <% if player.name == session[:user] %>
-        <% player.hand.hand.each do |card| %>
-          <li><%= card.text %></li>
-        <% end %>
-      <% end %>
-    <% end %>
-  </ul>
-  <% #for each white card in player's hand
-  #create and print out a div of the white card class %>
-</div>
