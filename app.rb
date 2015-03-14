@@ -19,8 +19,8 @@ get '/' do
 end
 
 get '/game' do
-  session[:game] ||= Game.setup
-  session[:game].players << Player.new(session[:user], game.white_deck)
+  session[:game] ||= Game.new
+  session[:game].players << Player.new(session[:user], session[:game].white_deck)
   erb :game, locals: { game: session[:game] }
 end
 
