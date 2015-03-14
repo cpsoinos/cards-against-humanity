@@ -1,6 +1,7 @@
 require 'pry'
 require 'pg'
 require 'sinatra'
+require 'table_print'
 require_relative 'lib/deck'
 require_relative 'lib/player'
 require_relative 'lib/card'
@@ -8,18 +9,25 @@ require_relative 'lib/hand'
 
 white_deck = Deck.new("white")
 black_deck = Deck.new("black")
+players = []
 
+# choose number of players
+print "How many people are playing? "
+player_count = gets.chomp.to_i
 
-player1 = Player.new("Corey", white_deck)
-player2 = Player.new("Liz", white_deck)
+player_count.times do
+  print "Enter player name: "
+  name = gets.chomp
+  players << Player.new(name, white_deck)
+end
 
-players = [player1, player2]
 
 cards_in_play = {}
 
 # pick a judge
 judge = players.sample
 judge.make_judge
+puts "#{judge.name} is judging this round."
 
 # judge picks a black card
 black_card = black_deck.deal!
@@ -41,6 +49,7 @@ winning_card = judge.judge_choose(cards_in_play)
 
 # name of winner
 winner = cards_in_play.key(winning_card)
+puts "#{winner} wins this round!"
 
 # binding.pry
 #
