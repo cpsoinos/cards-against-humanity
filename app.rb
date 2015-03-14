@@ -13,5 +13,6 @@ get '/' do
 end
 
 get '/game' do
+
   erb :foundation, locals: {}
 end
