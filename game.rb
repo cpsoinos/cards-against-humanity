@@ -52,6 +52,4 @@ class Game
     winner = cards_in_play.key(winning_card)
     # ERB: puts "#{winner} wins this round!"
   end
-
-
 end
