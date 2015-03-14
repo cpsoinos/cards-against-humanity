@@ -1,11 +1,15 @@
+require 'pry'
 require 'pg'
 require 'sinatra'
+# require 'sinatra-activerecord'
+require 'rake'
 require_relative 'lib/deck'
 require_relative 'lib/player'
 require_relative 'lib/card'
 require_relative 'lib/hand'
 require_relative 'game.rb'
 
+set :database, {adapter: "pg", database: "cards_against_humanity"}
 
 configure :development, :test do
   require 'pry'
@@ -19,7 +23,6 @@ end
 
 get '/game' do
   session[:game] ||= Game.new
-  binding.pry
   session[:game].players << Player.new(session[:user], session[:game].white_deck)
   erb :game, locals: { game: session[:game] }
 end
@@ -27,5 +30,4 @@ end
 post '/signin' do
   session[:user] = params[:user]
   redirect '/game'
-
 end
