@@ -23,6 +23,7 @@ judge.make_judge
 
 # judge picks a black card
 black_card = black_deck.deal!
+puts "Black card: #{black_card.text}"
 
 # need to show the black card, player needs to pick white card from hand
 players.each do |player|
@@ -35,17 +36,21 @@ players.each do |player|
   end
 end
 
+# judge chooses winning card
 winning_card = judge.judge_choose(cards_in_play)
 
-binding.pry
-
-
-if winning_card (cards_in_play)
-  # returns a card
-  # player wins this round, gets black_card as trophy
-  # player score += 1
-  # move on to next turn
-end
-
+# name of winner
+winner = cards_in_play.key(winning_card)
 
 # binding.pry
+#
+# # need to get the name of the player who submitted winning card
+# if winning_card (cards_in_play)
+#   # returns a card
+#   # player wins this round, gets black_card as trophy
+#   # player score += 1
+#   # move on to next turn
+# end
+#
+#
+# # binding.pry
