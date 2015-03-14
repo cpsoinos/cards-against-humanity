@@ -27,4 +27,9 @@ class Deck
     @all_cards
   end
 
+  def deal!
+    collection.shift
+  end
+
+
 end
