@@ -19,6 +19,7 @@ end
 
 get '/game' do
   session[:game] ||= Game.new
+  binding.pry
   session[:game].players << Player.new(session[:user], session[:game].white_deck)
   erb :game, locals: { game: session[:game] }
 end

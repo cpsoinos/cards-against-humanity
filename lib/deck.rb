@@ -18,9 +18,13 @@ class Deck
   end
 
   def get_cards
+    if @color == "white"
+      sql = "SELECT text FROM white_cards"
+    else
+      sql = "SELECT text FROM black_cards WHERE pick = 1"
+    end
     @all_cards = []
-    sql = "SELECT text FROM "
-    cards = (db_connection { |conn| conn.exec_params(sql + " #{color}_cards") }).to_a
+    cards = (db_connection { |conn| conn.exec_params(sql) }).to_a
     cards.each do |card|
       @all_cards << Card.new(card["text"])
     end
