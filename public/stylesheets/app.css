@@ -1,0 +1,36 @@
+body {
+  background-color: steelblue;
+  color: black;
+  font-family: Helvetica, sans-serif;
+}
+
+ul {
+  margin: 0 auto;
+}
+
+li.white_card
+{
+  background-color: white;
+  color: black;
+  width: 10em;
+  height: 15em;
+  margin: 1em;
+  list-style: none;
+  border: 1em solid white;
+  border-radius: 1em;
+}
+
+.black_card
+{
+  background-color: black;
+  color: white;
+  width: 10em;
+  height: 15em;
+  border: 1em solid black;
+  border-radius: 1em;
+}
+
+.row
+{
+  margin: 0 auto;
+}
