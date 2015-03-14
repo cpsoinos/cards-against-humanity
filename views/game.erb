@@ -1,26 +1,32 @@
 <% game.number_of_players %>
 <p><%= "Number of players: #{game.players.length}" %></p>
-<h1><%= "Players:" %></h1>
-<ul>
-  <% game.players.each do |player| %>
-    <li><%= player.name %></li>
-  <% end %>
-</ul>
+<div class="players">
+  <h3><%= "Players:" %></h3>
+  <ul>
+    <% game.players.each do |player| %>
+      <li><%= player.name %></li>
+    <% end %>
+  </ul>
+</div>
 
 <h3><%= "#{game.choose_judge.name} is judging this round." %></h3>
 
-<div class = "black_card">
-  <p>Black card: <%= game.generate_black_card.text %></p>
-</div>
+<div class="row">
+  <div class = "black_card">
+    <p><%= game.generate_black_card.text %></p>
+  </div>
+<div>
 
-<div class = "white_cards">
-  <ul class="small-block-grid-5">
-    <% game.players.each do |player| %>
-      <% if player.name == session[:user] %>
-        <% player.hand.hand.each do |card| %>
-          <li class="white_card"><%= card.text %></li>
+<div class="row">
+  <div class = "white_cards">
+    <ul class="small-block-grid-2 large-block-grid-5">
+      <% game.players.each do |player| %>
+        <% if player.name == session[:user] %>
+          <% player.hand.hand.each do |card| %>
+            <li class="white_card"><%= card.text %></li>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
-  </ul>
+    </ul>
+  </div>
 </div>
