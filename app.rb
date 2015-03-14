@@ -6,7 +6,6 @@ require_relative 'lib/card'
 require_relative 'lib/hand'
 require_relative 'game.rb'
 
-
 configure :development, :test do
   require 'pry'
 end
