@@ -6,7 +6,4 @@ class Card
     @text = text
   end
 
-  
-
-
 end

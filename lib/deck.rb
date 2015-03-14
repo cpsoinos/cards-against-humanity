@@ -35,5 +35,4 @@ class Deck
     collection.shift
   end
 
-
 end

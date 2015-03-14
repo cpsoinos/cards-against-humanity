@@ -7,7 +7,7 @@ require_relative 'lib/deck'
 require_relative 'lib/player'
 require_relative 'lib/card'
 require_relative 'lib/hand'
-require_relative 'game.rb'
+require_relative 'lib/game.rb'
 
 set :database, {adapter: "pg", database: "cards_against_humanity"}
 
