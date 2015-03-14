@@ -3,16 +3,28 @@ require 'sinatra'
 require_relative 'lib/deck'
 require_relative 'lib/player'
 require_relative 'lib/card'
+require_relative 'lib/hand'
+require_relative 'game.rb'
+
 
 configure :development, :test do
   require 'pry'
 end
 
+use Rack::Session::Cookie
+
 get '/' do
-  redirect '/game'
+  erb :index
 end
 
 get '/game' do
+  session[:game] ||= Game.new
+  session[:game].players << Player.new(session[:user], session[:game].white_deck)
+  erb :game, locals: { game: session[:game] }
+end
 
-  erb :foundation, locals: {}
+post '/signin' do
+  session[:user] = params[:user]
+  redirect '/game'
+
 end

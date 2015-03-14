@@ -16,7 +16,7 @@ class Player
     @hand.remove_selected(index)
   end
 
-  def judge_choose(cards_in_play)
+  def judge_choose_winner(cards_in_play)
     # judge chooses a white card from submissions
     # passes in a hash
     cards_in_play.values.each do |card|

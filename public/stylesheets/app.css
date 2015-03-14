@@ -28,4 +28,12 @@ li.white_card
   height: 15em;
   border: 1em solid black;
   border-radius: 1em;
+  background-color: lightgrey;
+  color: black;
+}
+
+
+.black_card
+{
+  margin: 0 auto;
 }

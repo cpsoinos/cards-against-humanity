@@ -1,10 +1,8 @@
-<div class = "black_card">
-  BLACK CARD
-  <% #display black card %>
-</div>
+<h2>Welcome to Cards Against Huge Manatee!</h2>
 
-<div class = "white_cards">
-  <% #for each white card in player's hand
-  #create and print out a div of the white card class %>
-  WHITE CARDS
-</div>
+
+<form action = '/signin' method="post">
+  <label for ="user">Enter your name: </label>
+  <input type="text" name="user" id="user">
+  <input type="submit">
+</form>
