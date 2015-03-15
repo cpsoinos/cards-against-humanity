@@ -8,32 +8,40 @@ ul {
   margin: 0 auto;
 }
 
-li.white_card
-{
+li {
+  list-style: none;
+}
+
+h3 {
+  text-align: center;
+}
+
+.white_cards {
+  margin: 0 auto;
+}
+
+li.white_card {
+  list-style: none;
   background-color: white;
   color: black;
   width: 10em;
   height: 15em;
   margin: 1em;
-  list-style: none;
   border: 1em solid white;
   border-radius: 1em;
 }
 
-.black_card
-{
+.black_card {
   background-color: black;
   color: white;
   width: 10em;
   height: 15em;
   border: 1em solid black;
   border-radius: 1em;
-  background-color: lightgrey;
-  color: black;
+  margin: 0 auto;
 }
 
-
-.black_card
-{
+.players {
   margin: 0 auto;
+  text-align: center;
 }

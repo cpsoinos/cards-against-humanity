@@ -28,5 +28,4 @@ class Player
     # returns the name of the player and the selected card (element from the hash)
   end
 
-
 end

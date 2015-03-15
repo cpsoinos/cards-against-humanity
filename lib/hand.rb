@@ -24,5 +24,4 @@ class Hand
     @hand.delete_at(index)
   end
 
-
 end
