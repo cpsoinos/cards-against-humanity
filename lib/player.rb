@@ -24,7 +24,6 @@ class Player
     end
     print "Judge, choose the index of the winner: "
     choice = gets.chomp.to_i
-    # binding.pry
     cards_in_play.values[choice]
     # returns the name of the player and the selected card (element from the hash)
   end

@@ -9,25 +9,31 @@ require_relative 'lib/card'
 require_relative 'lib/hand'
 require_relative 'lib/game.rb'
 
-set :database, {adapter: "pg", database: "cards_against_humanity"}
-
-configure :development, :test do
-  require 'pry'
-end
-
 use Rack::Session::Cookie
+
+game = Game.new
 
 get '/' do
   erb :index
 end
 
 get '/game' do
-  session[:game] ||= Game.new
-  session[:game].players << Player.new(session[:user], session[:game].white_deck)
-  erb :game, locals: { game: session[:game] }
+  erb :game, locals: { game: game }
+end
+
+get '/card' do
+  erb :card, locals: { game: game}
 end
 
 post '/signin' do
   session[:user] = params[:user]
   redirect '/game'
+end
+
+post '/name' do
+  params.each do |key, user|
+    game.players << Player.new(user,game.white_deck)
+  end
+
+  redirect '/card'
 end
