@@ -7,7 +7,7 @@ require_relative 'lib/deck'
 require_relative 'lib/player'
 require_relative 'lib/card'
 require_relative 'lib/hand'
-require_relative 'lib/game.rb'
+require_relative 'lib/game'
 
 use Rack::Session::Cookie
 
