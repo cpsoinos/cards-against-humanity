@@ -1,9 +1,10 @@
 class Game
 
-  attr_reader :white_deck, :black_deck
+  attr_reader :white_deck, :black_deck, :id
   attr_accessor :players
 
-  def initialize
+  def initialize(id)
+    @id = id
     @white_deck = Deck.new("white")
     @black_deck = Deck.new("black")
     @players = []

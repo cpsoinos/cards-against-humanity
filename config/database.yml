@@ -1,0 +1,5 @@
+development:
+  adapter: postgresql
+  database: cards_against_humanity
+  username:
+  password:

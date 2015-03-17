@@ -1,15 +1,17 @@
-<% game.number_of_players %>
-<p><%= "Number of players: #{game.players.length}" %></p>
+<% binding.pry %>
+
+<% session[:game].number_of_players %>
+<p><%= "Number of players: #{session[:game].players.length}" %></p>
 <div class="players">
   <h3><%= "Players:" %></h3>
   <ul>
-    <% game.players.each do |player| %>
+    <% session[:game].players.each do |player| %>
       <li><%= player.name %></li>
     <% end %>
   </ul>
 </div>
 
-<h3><%= "#{game.choose_judge.name} is judging this round." %></h3>
+<h3><%= "#{session[:game].choose_judge.name} is judging this round." %></h3>
 
 <div class="row">
   <div class = "black_card">
